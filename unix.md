@@ -7,6 +7,7 @@
 - [ln](#ln)
 - [Luks](#luks)
 - [man](#man)
+- [pdftk](#pdftk)
 - [rsync](#rsync)
 - [sed](#sed)
 - [ssh](#ssh)
@@ -112,6 +113,12 @@ man <SECTION> <PAGE>
 # Open a given file (it needs to have a '/' to be treasted as a filepath)
 man ./<PAGE_FILE>
 man <PAGE_PATH>
+```
+# pdftk
+
+```shell
+# Extract only pages N to M from input pdf
+pdftk <INPUT.pdf> cat <N>-<M> output <OUTPUT.pdf>
 ```
 
 # rsync
