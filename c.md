@@ -29,25 +29,17 @@ make
 
 ## Cross-compilation for Android
 
-Set environment:
 ```shell
-# Set Android ABI and targeted platform
-export ANDROID_ABI=arm64-v8a
-export ANDROID_PLATFORM=android-28
-
-# Set NDK paths (Linux)
-export ANDROID_NDK=${HOME}/Android/sdk/ndk/${NDK_VERSION}/
-# Set NDK paths (macOS)
-export ANDROID_NDK=${HOME}/Library/Android/sdk/ndk/${NDK_VERSION}/
-
-# CMake toolchain file
-export CMAKE_TOOLCHAIN_FILE=${ANDROID_NDK}/build/cmake/android.toolchain.cmake
-```
-
-Build process as usual:
-```shell
-# Usual build process
-cmake ..
+# Export NDK path (Linux)
+export ANDROID_NDK=${HOME}/Android/sdk/ndk/<NDK_VERSION>/
+# Set NDK path (macOS)
+export ANDROID_NDK=${HOME}/Library/Android/sdk/ndk/<NDK_VERSION>/
+# Configure CMake with Android settings
+cmake -DANDROID_ABI=arm64-v8a                                                   \
+      -DANDROID_PLATFORM=android-28                                             \
+      -DCMAKE_TOOLCHAIN_FILE=${ANDROID_NDK}/build/cmake/android.toolchain.cmake \
+      ..
+# Usual compilation process
 make
 ```
 
