@@ -1,7 +1,22 @@
 # Programming
 
+- [Python](#python)
 - [Rust](#rust)
 - [Sage](#sage)
+
+# Python
+
+## Get hex representation of integer (positive or negative)
+
+```python
+def to_hex(n, w):
+	return hex((n + (1 << w)) % (1 << w))
+
+def from_hex(n, w):
+	if n & (1 << (w - 1)):
+		n = n - (1 << w)
+	return n
+```
 
 # Rust
 
