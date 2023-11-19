@@ -1,5 +1,11 @@
 # C
 
+## Print default macro definitions
+
+```shell
+gcc -dM -E - < /dev/null
+```
+
 ## Cross-compilation for aarch64
 
 Needed packages:
