@@ -8,7 +8,7 @@
 ## Emit assembly
 
 ```shell
-cargo rustc --emit asm
+cargo rustc -- --emit asm
 ```
 
 Works also for `MIR`, `llvm-ir`, ...
