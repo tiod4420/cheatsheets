@@ -64,7 +64,7 @@ Valid starting       Expires              Service principal
 # Enter keytab utility
 $ ktutil
 
-ktutil:  read_kt keytab
+ktutil:  read_kt .keytab
 ktutil:  list
 slot KVNO Principal
 ---- ---- ---------------------------------------------------------------------
@@ -72,7 +72,7 @@ slot KVNO Principal
 ktutil:  delete_entry 1
 ktutil:  add_entry -password -p <PRINCIPAL> -k 1 -e <CIPHER>
 Password for <PRINCIPAL>:
-ktutil:  write_kt keytab.new
+ktutil:  write_kt .keytab.new
 ktutil:  quit
 
 # Update keytab file
