@@ -13,6 +13,7 @@
 - [ssh](#ssh)
 - [Steganography tools](#steganography-tools)
 - [systemctl](#systemctl)
+- [wget](#wget)
 - [Users and groups](#users-and-groups)
 - [VirtualBox](#virtualbox)
 
@@ -306,6 +307,16 @@ systemctl daemon-reload
 systemctl mask <SERVICE>
 # Unmask a service and return it to its previous state
 systemctl unmask <SERVICE>
+```
+
+# wget
+
+```shell
+# Recursively download the contents of a page
+wget -np -m -k -w 5 -e robots=off
+
+# Download media files from a web page
+wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off
 ```
 
 # Users and groups
