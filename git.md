@@ -64,3 +64,18 @@ git stash show -p
 ```shell
 git config --local credential.helper ""
 ```
+
+## List contributors
+
+```shell
+# List all the authors
+git shortlog --numbered --email --summary
+# List all the committers
+git shortlog --numbered --email --summary --group=committer
+```
+
+## Reset the author of all the commits
+
+```
+git rebase --root --exec 'git commit --amend --no-edit --reset-author'
+```
