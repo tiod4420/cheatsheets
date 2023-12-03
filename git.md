@@ -76,6 +76,25 @@ git shortlog --numbered --email --summary --group=committer
 
 ## Reset the author of all the commits
 
-```
+```shell
 git rebase --root --exec 'git commit --amend --no-edit --reset-author'
+```
+
+## List tags type
+
+```shell
+git for-each-ref refs/tags
+```
+
+Tag type:
+- lightweight: `commit`
+- annotated: `tag`
+
+## Force purge of orphan commits
+
+```shell
+# Tag dangling commits (including stash) as expired
+git reflog expire --expire-unreachable=now --all
+# Run garbage collector
+git gc --prune=now --aggressive
 ```

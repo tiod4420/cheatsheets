@@ -1,8 +1,19 @@
 # Programming
 
+- [Java](#java)
 - [Python](#python)
 - [Rust](#rust)
 - [Sage](#sage)
+
+# Java
+
+## Check `.class` file information
+
+```shell
+javap -v -classpath ${FILE}.jar com.example.package.MyClass
+```
+
+File structure: [https://en.wikipedia.org/wiki/Java\_class\_file](https://en.wikipedia.org/wiki/Java_class_file)
 
 # Python
 
