@@ -119,7 +119,13 @@ man <PAGE_PATH>
 
 ```shell
 # Extract only pages N to M from input pdf
-pdftk <INPUT.pdf> cat <N>-<M> output <OUTPUT.pdf>
+pdftk <INPUT> cat <N>-<M> output <OUTPUT>
+
+# Concatenate pdf into one file
+pdftk <INPUT_1> ... <INPUT_N> cat output <OUTPUT>
+
+# Remove password from PDF
+pdftk <INPUT> input_wd PROMPT output <OUTPUT>
 ```
 
 # rsync
