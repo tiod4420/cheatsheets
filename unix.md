@@ -7,6 +7,7 @@
 - [ln](#ln)
 - [Luks](#luks)
 - [man](#man)
+- [openssl](#openssl)
 - [pdftk](#pdftk)
 - [rsync](#rsync)
 - [sed](#sed)
@@ -115,6 +116,37 @@ man <SECTION> <PAGE>
 man ./<PAGE_FILE>
 man <PAGE_PATH>
 ```
+
+# openssl
+
+```shell
+# Encrypt file with AES CBC and PBKDF2
+openssl aes-256-cbc -a -salt -pbkdf2 -in <FILE> -out <FILE>.enc
+
+# Decrypt file with AES CBC and PBKDF2
+openssl aes-256-cbc -a -salt -pbkdf2 -d -in <FILE>.enc -out <FILE>.dec
+```
+
+# pdftk
+
+```shell
+# Extract only pages N to M from input pdf
+pdftk <INPUT> cat <N>-<M> output <OUTPUT>
+
+# Concatenate pdf into one file
+pdftk <INPUT_1> ... <INPUT_N> cat output <OUTPUT>
+
+# Remove password from PDF
+pdftk <INPUT> input_wd PROMPT output <OUTPUT>
+```
+
+# rsync
+
+## Trailing slash caveat
+
+```shell
+```
+
 # pdftk
 
 ```shell
