@@ -145,26 +145,6 @@ pdftk <INPUT> input_wd PROMPT output <OUTPUT>
 ## Trailing slash caveat
 
 ```shell
-```
-
-# pdftk
-
-```shell
-# Extract only pages N to M from input pdf
-pdftk <INPUT> cat <N>-<M> output <OUTPUT>
-
-# Concatenate pdf into one file
-pdftk <INPUT_1> ... <INPUT_N> cat output <OUTPUT>
-
-# Remove password from PDF
-pdftk <INPUT> input_wd PROMPT output <OUTPUT>
-```
-
-# rsync
-
-## Trailing slash caveat
-
-```shell
 # Copy source directory into destination (cp -r <SRC> <DST>)
 rsync -r <SRC> <DST>
 # Copy source directory content into destination (cp -r <SRC>/. <DST>)
