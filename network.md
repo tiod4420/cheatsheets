@@ -1,12 +1,14 @@
 # Network
 
-- [dig](#dig)
-- [lsof](#lsof)
+- [DNS](#dns)
+- [List open ports](#list-open-ports)
 - [nc](#nc)
 - [nmap](#nmap)
 - [whois](#whois)
 
-# dig
+# DNS
+
+## dig
 
 ```shell
 # Get everything
@@ -19,11 +21,33 @@ dig example.com MX
 dig @1.1.1.1 example.com
 ```
 
-# lsof
+## resolvedns (with systemd-resolved)
+
+```shell
+# Show DNS resolver information
+resolvectl
+
+# Query server
+resolvectl query example.com
+```
+
+# List open ports
+
+## lsof
 
 ```shell
 # List open IP connections (hostname and port are not converted)
 lsof -Pn -i
+```
+
+## ss
+
+```shell
+# List all open TCP connections with corresponding process
+ss -apt
+
+# List all open UDP connections with corresponding process
+ss -apu
 ```
 
 # nc
