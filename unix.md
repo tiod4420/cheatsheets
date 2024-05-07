@@ -66,10 +66,10 @@ Valid starting       Expires              Service principal
 $ ktutil
 
 ktutil:  read_kt .keytab
-ktutil:  list
+ktutil:  list -e
 slot KVNO Principal
 ---- ---- ---------------------------------------------------------------------
-   1    1                 <PRINCIPAL>
+   1    1                 <PRINCIPAL> (<CIPHER>)
 ktutil:  delete_entry 1
 ktutil:  add_entry -password -p <PRINCIPAL> -k 1 -e <CIPHER>
 Password for <PRINCIPAL>:
