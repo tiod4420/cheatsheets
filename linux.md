@@ -68,6 +68,12 @@ objdump --disassemble=<SYMBOL>
 objdump --disassemble-all
 ```
 
+## Get RPATH
+
+```shell
+objdump -x <BINARY> | grep 'R.*PATH'
+```
+
 # readelf
 
 ## Check for NX bit
@@ -75,6 +81,12 @@ objdump --disassemble-all
 ```shell
 # NX bit is set if 'RWE' is present
 readelf -a FILE | grep GNU_STACK
+```
+
+## Get ELF dynamic section
+
+```shell
+readelf -d <BINARY/LIBRARY>
 ```
 
 ## Get hexdump of symbol

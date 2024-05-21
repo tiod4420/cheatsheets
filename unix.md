@@ -9,6 +9,7 @@
 - [man](#man)
 - [openssl](#openssl)
 - [pdftk](#pdftk)
+- [rpm](#rpm)
 - [rsync](#rsync)
 - [sed](#sed)
 - [ssh](#ssh)
@@ -138,6 +139,14 @@ pdftk <INPUT_1> ... <INPUT_N> cat output <OUTPUT>
 
 # Remove password from PDF
 pdftk <INPUT> input_wd PROMPT output <OUTPUT>
+```
+
+# rpm
+
+## Extract content of .rpm package
+
+```shell
+rpm2cpio <PACKAGE> | cpio -idmv
 ```
 
 # rsync
