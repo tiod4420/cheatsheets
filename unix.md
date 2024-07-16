@@ -16,6 +16,7 @@
 - [Steganography tools](#steganography-tools)
 - [systemctl](#systemctl)
 - [wget](#wget)
+- [USB](#usb)
 - [Users and groups](#users-and-groups)
 - [VirtualBox](#virtualbox)
 
@@ -120,12 +121,24 @@ man <PAGE_PATH>
 
 # openssl
 
+## Encryption
+
 ```shell
 # Encrypt file with AES CBC and PBKDF2
 openssl aes-256-cbc -a -salt -pbkdf2 -in <FILE> -out <FILE>.enc
 
 # Decrypt file with AES CBC and PBKDF2
 openssl aes-256-cbc -a -salt -pbkdf2 -d -in <FILE>.enc -out <FILE>.dec
+```
+
+## X.509
+
+```shell
+# Dump Certificate Signing Request
+openssl req -noout -text -in <FILE>.csr
+
+# Dump X.509 certificate
+openssl x509 -noout -text -in <FILE>.pem
 ```
 
 # pdftk
@@ -344,6 +357,30 @@ wget -np -m -k -w 5 -e robots=off
 
 # Download media files from a web page
 wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off
+```
+
+# USB
+
+## List USB devices
+
+```shell
+lsusb
+lsusb -t
+```
+
+## Enable/Disable USB device
+
+```shell
+# Enable
+echo 'X-Y' | sudo tee /sys/bus/usb/drivers/usb/bind
+# Disable
+echo 'X-Y' | sudo tee /sys/bus/usb/drivers/usb/unbind
+```
+
+## Reset USB controler
+
+```shell
+usb_modeswitch -v 0xXXXX -p 0xYYYY --reset-usb
 ```
 
 # Users and groups
