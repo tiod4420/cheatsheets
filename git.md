@@ -24,7 +24,6 @@ git reset --hard origin/<BRANCH>
 ```shell
 git reset --soft HEAD~2
 git commit -m '<MESSAGE>'
-git push -f
 ```
 
 ## Cherry pick a commit
@@ -69,9 +68,10 @@ git config --local credential.helper ""
 
 ```shell
 # List all the authors
-git shortlog --numbered --email --summary
+git shortlog --summary --email --numbered
+
 # List all the committers
-git shortlog --numbered --email --summary --group=committer
+git shortlog --summary --email --numbered --group=committer
 ```
 
 ## Reset the author of all the commits
@@ -97,4 +97,10 @@ Tag type:
 git reflog expire --expire-unreachable=now --all
 # Run garbage collector
 git gc --prune=now --aggressive
+```
+
+## Update remote HEAD
+
+```shell
+git remote set-head <REMOTE> -a
 ```
