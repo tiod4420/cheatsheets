@@ -49,6 +49,19 @@ diff -qr <DIR_1> <DIR_2>
 
 # Kerberos
 
+## Init keytab from `.bashrc`
+
+```shell
+# Kerberos file name template
+export KRB5CCNAME=~/.krb5cc_$$
+
+# Init Kerberos ticket from keytab
+/usr/bin/kinit -f -k -t ~/.keytab <PRINCIPAL>
+
+# Destroy ticket when quitting bash
+trap '/usr/bin/kdestroy -q' EXIT
+```
+
 ## List supported ciphers for keytab
 
 ```shell
