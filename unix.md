@@ -15,10 +15,11 @@
 - [ssh](#ssh)
 - [Steganography tools](#steganography-tools)
 - [systemctl](#systemctl)
-- [wget](#wget)
+- [Terminal capabilities](#terminal-capabilities)
 - [USB](#usb)
 - [Users and groups](#users-and-groups)
 - [VirtualBox](#virtualbox)
+- [wget](#wget)
 
 # Archives
 
@@ -362,14 +363,23 @@ systemctl mask <SERVICE>
 systemctl unmask <SERVICE>
 ```
 
-# wget
+# Terminal capabilities
+
+## Dump capabilities
 
 ```shell
-# Recursively download the contents of a page
-wget -np -m -k -w 5 -e robots=off
+# List current terminal capabilities
+infocmp -x
 
-# Download media files from a web page
-wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off
+# List specific terminal capabilities
+infocmp -x <SHELL>
+```
+
+## Install capabilities
+
+```shell
+# File format is same as infocmp -x
+tic -x <FILE>
 ```
 
 # USB
@@ -429,4 +439,14 @@ VBoxManage list runningvms
 
 # Start a VM in headless mode
 VBoxManage startvm <VMNAME> --type headless
+```
+
+# wget
+
+```shell
+# Recursively download the contents of a page
+wget -np -m -k -w 5 -e robots=off
+
+# Download media files from a web page
+wget -nd -r -l 1 -H -A png,gif,jpg,svg,jpeg,webm -e robots=off
 ```
