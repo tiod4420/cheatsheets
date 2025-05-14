@@ -15,7 +15,6 @@ git reset --hard HEAD~1
 ## Reset branch and sync with origin
 
 ```shell
-git fetch --all
 git reset --hard origin/<BRANCH>
 ```
 
@@ -29,7 +28,7 @@ git commit -m '<MESSAGE>'
 ## Cherry pick a commit
 
 ```shell
-git cherry-pick -x <COMMIT>
+git cherry-pick <COMMIT>
 ```
 
 ## Delete branch
