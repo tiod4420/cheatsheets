@@ -158,6 +158,8 @@ openssl x509 -noout -text -in <FILE>.pem
 # pdftk
 
 ```shell
+# Extract page N from input pdf
+pdftk <INPUT> cat <N> output <OUTPUT>
 # Extract only pages N to M from input pdf
 pdftk <INPUT> cat <N>-<M> output <OUTPUT>
 
