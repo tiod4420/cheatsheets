@@ -412,10 +412,10 @@ usb_modeswitch -v 0xXXXX -p 0xYYYY --reset-usb
 
 ```shell
 # Add a new user, and create home directory
-adduser -m <USER>
+useradd --create-home <USER>
 
 # Add another group to user
-usermod -aG <GROUP> <USER>
+usermod --append --groups <GROUP> <USER>
 
 # Set password as expired (must be changed at next login)
 passwd --expire <USER>
@@ -425,9 +425,13 @@ groups
 # List another user groups
 groups <USER>
 
-# List users on the system
+# Rename user and group
+usermod --login <NEW_USER> --move-home --home <NEW_HOME> <OLD_USER>
+groupmod --new-name <NEW_GROUP> <OLD_GROUP>
+
+# List all users on the system
 compgen -u
-# List groups on the system
+# List all groups on the system
 compgen -g
 ```
 
