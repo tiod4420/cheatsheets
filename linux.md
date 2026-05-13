@@ -125,6 +125,13 @@ readelf -x<Ndx> <OBJECT>
 # strace
 
 ```shell
-# Filter syscalls
+# Filter syscalls (equivalent commands)
+strace -e <SYSCALLS> <COMMAND>
 strace --trace=<SYSCALLS> <COMMAND>
+
+# Exclude syscalls
+strace -e !<SYSCALL> <COMMAND>
+
+# Follow childs
+strace -f <COMMAND>
 ```
