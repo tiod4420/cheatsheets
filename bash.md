@@ -115,3 +115,9 @@ join_array()
 
 join_array ',' a b c d			# a,b,c,d
 ```
+
+## Highlight pattern with grep
+
+```bash
+$ grep --color=always "PATTERN\|$" <FILE>
+```
