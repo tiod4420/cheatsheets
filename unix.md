@@ -370,18 +370,24 @@ systemctl unmask <SERVICE>
 ## Dump capabilities
 
 ```shell
-# List current terminal capabilities
+# List $TERM capabilities (with user-defined capabilities)
 infocmp -x
 
 # List specific terminal capabilities
-infocmp -x <SHELL>
+infocmp -x <TERM>
+
+# List capabilities one per line
+infocmp -x -1
+
+# Only show capability name, without value
+infocmp -x -1 | sed -nE -e '1,2d' -e 's/^\s+([^=]*)=.*/\1/p' | sort | column
 ```
 
 ## Install capabilities
 
 ```shell
-# File format is same as infocmp -x
-tic -x <FILE>
+# Install specific TERM from terminfo database file (https://invisible-island.net/datafiles/release/ncurses.tar.gz)
+tic -xe <TERM> terminfo.src
 ```
 
 # USB
