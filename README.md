@@ -7,6 +7,7 @@
 - [Find](find.md)
 - [GDB](gdb.md)
 - [Git](git.md)
+- [hledger](hledger.md)
 - [Linux system](linux.md)
 - [MacPorts](macports.md)
 - [Network](network.md)
