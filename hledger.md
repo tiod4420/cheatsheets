@@ -60,6 +60,9 @@ hledger -f <FILE>.csv --rules <RULES>.rules print
 # Show account names
 hledger accounts
 
+# Show only used accounts, in tree style
+hledger accounts --tree --used
+
 # Show transaction descriptions
 hledger descriptions
 hledger payees
