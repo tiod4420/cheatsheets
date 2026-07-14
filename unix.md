@@ -4,6 +4,7 @@
 - [dd](#dd)
 - [diff](#diff)
 - [Kerberos](#kerberos)
+- [iconv](#iconv)
 - [ln](#ln)
 - [Luks](#luks)
 - [man](#man)
@@ -95,6 +96,16 @@ ktutil:  quit
 # Update keytab file
 mv .keytab .keytab.old
 mv .keytab.new .keytab
+```
+
+# iconv
+
+```shell
+# List available encodings
+$iconv -l
+
+# Change encoding of file
+$ iconv -f FROM_ENCODING -t TO_ENCODING <INPUT_FILE>
 ```
 
 # ln
